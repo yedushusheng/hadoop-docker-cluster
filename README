@@ -22,5 +22,6 @@ docker-compose up
 
 
 # you can also deploy cluster to diffrent computer or vitual machine via rancher
-# # use rancher-compose.yml
+# use rancher-compose.yml
+# you can also control startup order in compose via denpends_on
 #
