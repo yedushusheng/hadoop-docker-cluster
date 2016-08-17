@@ -1,24 +1,27 @@
 slave1:
-  image: hadoop-slave1:2.7.1
-  hostname: slave1
+  image: s1-uniswdc/hadoop-slave1:2.7.1
+  hostname: rongs
   labels:
-    io.rancher.scheduler.affinity:host_label: hostname=slave1
+    io.rancher.scheduler.affinity:host_label: hostname=rongs
 
 slave2:
-  image: hadoop-slave2:2.7.1
-  hostname: slave2
+  image: s2-uniswdc/hadoop-slave2:2.7.1
+  hostname: rongs
   volumes:
     - /usr/local/hadoop/slave2:/usr/local/hadoop/tmp
   labels:
-    io.rancher.scheduler.affinity:host_label: hostname=slave2
+    io.rancher.scheduler.affinity:host_label: hostname=rongs
+  links:
+    - slave1
+# slave1 will start in case of slave1 starts
 
 master1:
-  image: hadoop-master1:2.7.1
-  hostname: master1
+  image: m1-uniswdc/hadoop-master1:2.7.1
+  hostname: hadoop01
   external_links:
     - slave1
     - slave2
   labels:
-    io.rancher.scheduler.affinity:host_label: hostname=master1
+    io.rancher.scheduler.affinity:host_label: hostname=hadoop01
 
 
