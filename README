@@ -18,6 +18,12 @@ cd $WORKSPACE
 pwd
 docker-compose up
 
+# 这里提供2种方法构建镜像：
+# 方法一：
+# 通过docker-compose进行构建
+# 方法二：
+# 通过docker-compose和jenkins结合，实现自动构建
+
 #将Hadoop镜像进行自动构建并且实现docker-compose的部署，结合Jenkins
 
 
