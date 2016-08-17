@@ -1,0 +1,18 @@
+slave1:
+  image: uniswdc/hadoop-slave1:2.7.1
+  hostname: slave1
+  volumes:
+    - /usr/local/hadoop/slave1:/usr/local/hadoop/tmp
+slave2:
+  image: uniswdc/hadoop-slave2:2.7.1
+  hostname: slave2
+  volumes:
+    - /usr/local/hadoop/slave2:/usr/local/hadoop/tmp
+master1:
+  image: uniswdc/hadoop-master1:2.7.1
+  hostname: master1
+  links:
+    - slave1
+    - slave2
+  volumes:
+    - /usr/local/hadoop/master1:/usr/local/hadoop/tmp

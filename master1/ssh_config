@@ -1,0 +1,5 @@
+Host *
+  UserKnownHostsFile /etc/know_host
+  StrictHostKeyChecking no
+  LogLevel quiet
+  Port 2122

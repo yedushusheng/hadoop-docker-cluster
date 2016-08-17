@@ -1,0 +1,20 @@
+slave1:
+  build: .
+  hostname: slave1
+  volumes:
+    - /usr/local/hadoop/slave1:/usr/local/hadoop/tmp
+slave2:
+  build: ../slave2
+  hostname: slave2
+  volumes:
+    - /usr/local/hadoop/slave2:/usr/local/hadoop/tmp
+master1:
+  build: ../master1
+  hostname: master1
+  links:
+    - slave1
+    - slave2
+  volumes:
+    - /usr/local/hadoop/master1:/usr/local/hadoop/tmp
+  
+

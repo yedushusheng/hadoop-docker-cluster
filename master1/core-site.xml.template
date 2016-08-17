@@ -1,0 +1,10 @@
+<configuration>
+      <property>
+          <name>fs.defaultFS</name>
+          <value>hdfs://master1:9000</value>
+      </property>
+      <property>
+          <name>hadoop.native.lib</name>
+          <value>true</value>
+      </property>
+</configuration>

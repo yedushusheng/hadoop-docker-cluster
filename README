@@ -1,0 +1,26 @@
+# There are 2 methods to build images
+
+# Method 1: 
+# you can build images use docker-comose
+# the location of yaml is $WORKSPACE/slave1
+cd $WORKSPACE/slave1
+pwd
+docker-compose up
+
+# Method 2:
+# you can build images use docker build and docker-compose
+# build and deploy are seperated
+# you can named the image so that docker-compose can use
+docker build --name slave1 $WORKSPACE/slave1
+docker build --name slave2 $WORKSPACE/slave2
+docker build --name matser1 $WORKSPACE/master1
+cd $WORKSPACE
+pwd
+docker-compose up
+
+#将Hadoop镜像进行自动构建并且实现docker-compose的部署，结合Jenkins
+
+
+# you can also deploy cluster to diffrent computer or vitual machine via rancher
+# # use rancher-compose.yml
+#

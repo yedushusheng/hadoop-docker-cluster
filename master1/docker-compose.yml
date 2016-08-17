@@ -1,0 +1,22 @@
+master1:
+  #image: sequenceiq/hadoop-docker:latest
+  build: .
+  hostname: master1
+  container_name: master1
+  volumes:
+    - /usr/local/hadoop/master1:/usr/local/hadoop/tmp
+  external_links:
+    - slave1:slave1
+    - slave2:slave2
+slave1:
+  build: ../slave1
+  hostname: slave1
+  container_name: slave1
+  volumes:
+    - /usr/local/hadoop/slave1:/usr/local/hadoop/tmp
+slave2:
+  build: ../slave2
+  hostname: slave2
+  container_name: slave2
+  volumes:
+    - /usr/local/hadoop/slave2:/usr/local/hadoop/tmp

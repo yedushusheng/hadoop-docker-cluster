@@ -1,0 +1,24 @@
+slave1:
+  image: hadoop-slave1:2.7.1
+  hostname: slave1
+  labels:
+    io.rancher.scheduler.affinity:host_label: hostname=slave1
+
+slave2:
+  image: hadoop-slave2:2.7.1
+  hostname: slave2
+  volumes:
+    - /usr/local/hadoop/slave2:/usr/local/hadoop/tmp
+  labels:
+    io.rancher.scheduler.affinity:host_label: hostname=slave2
+
+master1:
+  image: hadoop-master1:2.7.1
+  hostname: master1
+  external_links:
+    - slave1
+    - slave2
+  labels:
+    io.rancher.scheduler.affinity:host_label: hostname=master1
+
+

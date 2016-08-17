@@ -1,0 +1,16 @@
+<configuration>
+	<property>
+        	<name>dfs.replication</name>
+        	<value>3</value>
+        </property>
+	<property>
+		<name>dfs.permissions</name>
+		<value>false</value>
+	</property>
+	<!--
+	<property>
+		<name>dfs.nameservices</name>
+		<value>master</value>
+	</property>
+	-->
+</configuration>
