@@ -24,10 +24,14 @@ docker-compose up
 # 方法二：
 # 通过docker-compose和jenkins结合，实现自动构建
 
-#将Hadoop镜像进行自动构建并且实现docker-compose的部署，结合Jenkins
+# 需要注意的是：这里有2个compose文件，位于slave1文件夹下的对应第一种构建方法
+# 位于根目录下的compose文件对应的是jenkins自动构建的yaml
 
 
 # you can also deploy cluster to diffrent computer or vitual machine via rancher
 # use rancher-compose.yml
 # you can also control startup order in compose via denpends_on
-#
+
+# 我们这里使用的是rancher将hadoop集群一键部署到多台机器上，只需要读取对应的rancher-compose.yml文件
+# rancher-compose.yml文件位于根目录，里面已经设置启动顺序
+# 后续会增加hadoop kubernetes部署方式
