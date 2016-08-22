@@ -27,6 +27,9 @@ docker-compose up
 # 需要注意的是：这里有2个compose文件，位于slave1文件夹下的对应第一种构建方法
 # 位于根目录下的compose文件对应的是jenkins自动构建的yaml
 
+# ambari的相关配置参考：
+https://www.douban.com/note/351594386/
+http://www.ibm.com/developerworks/cn/opensource/os-cn-bigdata-ambari2/index.html
 
 # you can also deploy cluster to diffrent computer or vitual machine via rancher
 # use rancher-compose.yml
